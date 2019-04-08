@@ -16,6 +16,7 @@ namespace System.Transactions
 	{
 		public SubordinateTransaction (IsolationLevel isoLevel,
 			ISimpleTransactionSuperior superior)
+			: base (new TransactionOptions(isoLevel, TransactionManager.DefaultTimeout))
 		{
 			throw new NotImplementedException ();
 		}

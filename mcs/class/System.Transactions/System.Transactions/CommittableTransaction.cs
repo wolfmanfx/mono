@@ -31,12 +31,14 @@ namespace System.Transactions
 		}
 
 		public CommittableTransaction (TimeSpan timeout)
+			: base (new TransactionOptions(IsolationLevel.Serializable, timeout))
 		{
 			options = new TransactionOptions ();
 			options.Timeout = timeout;
 		}
 
 		public CommittableTransaction (TransactionOptions options)
+			: base (options)
 		{
 			this.options = options;
 		}
