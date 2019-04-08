@@ -21,6 +21,7 @@ namespace System.Transactions
 
 		internal DependentTransaction (Transaction parent,
 			DependentCloneOption option)
+			: base(new TransactionOptions(parent.IsolationLevel, TransactionManager.DefaultTimeout))
 		{
 //			this.parent = parent;
 //			this.option = option;
